@@ -9,3 +9,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     while True:
         s.sendall(b'Hello, world')
         t.sleep(1)
+        data = s.recv(1024)
+        print("returned data:" + data.decode("utf-8"))
