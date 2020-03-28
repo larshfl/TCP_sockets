@@ -8,6 +8,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include<string.h>
 
 
 #define MAX (256)
@@ -37,10 +38,11 @@ int main(){
         printf("Connection established \n");
     }
 
-    char send_buff[MAX] = "Hello, World";
+    char * send_buff = "Hello, World";
+    int len = strlen(send_buff);
 
     for (;;){
-        write(file_descriptor, send_buff, MAX);
+        write(file_descriptor, send_buff, len);
         sleep(1);
     }
 
