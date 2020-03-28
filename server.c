@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 
 #define MAX (256)
-#define PORT (6003)
+#define PORT (60003)
 
 void rec_and_print(int socket_fd){
 

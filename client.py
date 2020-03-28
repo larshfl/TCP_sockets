@@ -8,6 +8,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     while True:
         s.sendall(b'Hello, world')
-        t.sleep(1)
-        data = s.recv(1024)
-        print("returned data:" + data.decode("utf-8"))
+        t.sleep(2)
