@@ -27,9 +27,9 @@ void rec_and_print(int socket_fd){
 }
 
 
-int main(){
 
-    const char * addr = "127.0.0.1";
+int main(){
+    const char * addr = "138.68.107.119";
 
     const struct sockaddr_in server_addr = {
         .sin_family = AF_INET,
