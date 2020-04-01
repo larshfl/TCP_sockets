@@ -1,4 +1,5 @@
 import socket
+import smtplib, ssl
 
 
 HOST = '127.0.0.1'
@@ -18,13 +19,19 @@ def tcp_server():
             msg_to_be_emailed = "Connected by " + str(addr[0]) + " " + str(addr[1])
             send_email("larsmayen94@hotmail.com", passwd, msg_to_be_emailed)
             while True:
-                data = conn.recv(1024)
-                if not data:
+                try:
+                    data = conn.recv(1024)
+                    if not data:
+                        break
+                    print(data)
+                
+                except:
+                    s.close()
                     break
-                print(data)
 
 
-import smtplib, ssl
+
+
 
 def send_email(receiver_email, passwd, msg_to_send):
     smtp_server = "smtp.gmail.com"
